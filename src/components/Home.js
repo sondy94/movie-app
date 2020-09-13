@@ -15,8 +15,13 @@ import MovieThumbs from "./elements/MovieThumbs";
 import SearchBar from "./elements/SearchBar";
 import Spinner from "./elements/Spinner";
 
+//importing customhooks
+import { useHomeFetch } from "./hooks/useHomeFetch";
+
 function Home() {
-  const [state, setState] = useState([]);
+  const [{ state, loading, error }, fetchMovies] = useHomeFetch();
+
+  console.log(state);
 
   return (
     <div>
